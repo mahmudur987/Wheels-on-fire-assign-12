@@ -1,0 +1,33 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+
+          "primary": "#31216b",
+
+          "secondary": "#EF9FBC",
+
+          "accent": "#EEAF3A",
+
+          "neutral": "#291334",
+
+          "base-100": "#FAF7F5",
+
+          "info": "#3ABFF8",
+
+          "success": "#36D399",
+
+          "warning": "#FBBD23",
+
+          "error": "#F87272",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
+}
