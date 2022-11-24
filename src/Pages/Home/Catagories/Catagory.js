@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Cycle from '../Home/Cycles/Cycle';
+import Cycle from '../Cycles/Cycle';
 
 const Catagory = () => {
     const cycles = useLoaderData()
-    console.log(cycles)
+    // console.log(cycles)
     return (
         <div>
 

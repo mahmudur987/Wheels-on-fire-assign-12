@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
-import Cycles from './Cycles/Cycles';
+import Cycles from '../Cycles/Cycles';
 import HoatDeal from '../HotDeal/HoatDeal';
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
 
                 <HoatDeal></HoatDeal>
             </div>
-            <div className=' py-10'>
+            <div className=' py-10 h-80 border border-secondary rounded-md'>
                 <h1 className="text-3xl underline uppercase font-bold bg-secondary p-2 rounded-xl m-4 text-info"> Catagories</h1>
                 <div className='grid '>
 
@@ -46,11 +46,19 @@ const Home = () => {
 
                 </div>
 
+
+            </div>
+
+            <div className='border border-black'>
+                <h1 className="text-3xl underline uppercase font-bold bg-red-400 p-2 rounded-xl m-4 text-info">All  Cycles</h1>
                 <Cycles
                     cycles={cycles}
                 ></Cycles>
 
             </div>
+
+
+
         </div>
     );
 };
