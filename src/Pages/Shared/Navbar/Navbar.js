@@ -38,7 +38,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="navbar bg-base-300 flex justify-between">
+        <div className="navbar bg-primary flex justify-between">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,7 +48,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case font-bold text-xl"> WHEELS ON FIRE  </Link>
+                <Link className="btn btn-ghost normal-case font-bold text-xl bg-neutral"> WHEELS ON FIRE  </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
