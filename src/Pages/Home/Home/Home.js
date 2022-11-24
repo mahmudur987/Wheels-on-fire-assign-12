@@ -2,15 +2,21 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
-import Cycles from '../Cycles/Cycles';
+import Cycles from './Cycles/Cycles';
 import HoatDeal from '../HotDeal/HoatDeal';
 
 const Home = () => {
     const [cycles, SetCycles] = useState([]);
+    const [catagories, SetCatagories] = useState([])
     useEffect(() => {
-        fetch('cycles.json').then(res => res.json()).then(data => SetCycles(data))
+        fetch('http://localhost:5000/cycles').then(res => res.json()).then(data => SetCycles(data))
+    }, [])
+    useEffect(() => {
+        fetch('http://localhost:5000/catagories').then(res => res.json()).then(data => SetCatagories(data))
     }, [])
 
+
+    console.log(catagories)
 
     return (
         <div>
@@ -26,19 +32,17 @@ const Home = () => {
                 <h1 className="text-3xl underline uppercase font-bold bg-secondary p-2 rounded-xl m-4 text-info"> Catagories</h1>
                 <div className='grid '>
 
-                    <Link>
-                        <button className='text-2xl font-bold text-primary'> Mountain Bike</button>
+                    {
+                        catagories.map(catagory => <Link
+                            key={catagory._id}
+                            to={`catagory/${catagory.catagoryId}`}
 
-                    </Link>
-                    <Link>
+                        >  <button className='text-2xl font-bold text-primary'>{catagory.catagoryName
+                        } </button>
 
-                        <button className='text-2xl font-bold text-primary'> Road  Bike</button>
-                    </Link>
-                    <Link>
-                        <button className='text-2xl font-bold text-primary'> Hybrid Bike</button>
+                        </Link>)
+                    }
 
-
-                    </Link>
 
                 </div>
 

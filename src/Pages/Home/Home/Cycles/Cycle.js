@@ -7,7 +7,7 @@ const Cycle = ({ cycle }) => {
     return (
         <div className="card w-full  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={picture} alt="cycle" className="rounded-xl h-80" />
+                <img src={picture} alt="cycle" className="rounded-xl h-80 w-80" />
             </figure>
             <div className="card-body text-start ">
                 <h2 className="card-title text-2xl font-bold"> {productTitle} </h2>
