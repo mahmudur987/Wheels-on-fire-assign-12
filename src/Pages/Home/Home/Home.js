@@ -16,7 +16,7 @@ const Home = () => {
     }, [])
 
 
-    console.log(catagories)
+    // console.log(catagories)
 
     return (
         <div>

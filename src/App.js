@@ -9,7 +9,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="lg:w-[95%] mx-auto">
 
       <RouterProvider router={router}>
 
