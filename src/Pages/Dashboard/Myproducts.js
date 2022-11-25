@@ -1,26 +1,58 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { authContext } from '../../Context/UserContext';
+import MyProduct from './MyProduct';
 
 const Myproducts = () => {
   const { user } = useContext(authContext)
 
-  const [myproduct, SetmyProduct] = useState([])
+  const [myproducts, SetmyProducts] = useState([])
 
-  // axios.get(`${process.env.REACT_APP_databaseurl}/cycles/myproduct?email=${user?.email}`)
-  //   .then(function (response) {
-  //     // console.log(response.data);
-  //     SetmyProduct(response.data)
-  //   });
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_databaseurl}/cycles/myproduct?email=${user?.email}`)
+      .then(function (response) {
 
-  // // console.log(myproduct)
+        SetmyProducts(response.data)
+      });
+
+
+  }, [user])
+  const handleDelete = (id) => {
+    const sure = window.confirm('are you sure to remove ')
+    if (sure) {
+      fetch(`${process.env.REACT_APP_databaseurl}/cycles/${id}`, {
+        method: 'DELETE', // or 'PUT'
+
+      }).then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            toast.success('your item remove successfully');
+            const remainingProduct = myproducts.filter(p => p._id !== id);
+            SetmyProducts(remainingProduct)
+          }
+        })
+    }
+  }
+
+
+
+
 
 
 
 
   return (
-    <div>
-
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
+      {
+        myproducts.map(myproduct => <MyProduct
+          key={myproduct._id}
+          myproduct={myproduct}
+          handleDelete={handleDelete}
+        >
+        </MyProduct>)
+      }
     </div>
   );
 };
