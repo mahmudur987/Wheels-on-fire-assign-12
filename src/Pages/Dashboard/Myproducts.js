@@ -21,17 +21,18 @@ const Myproducts = () => {
   const handleDelete = (id) => {
     const sure = window.confirm('are you sure to remove ')
     if (sure) {
-      fetch(`${process.env.REACT_APP_databaseurl}/cycles/${id}`, {
+      fetch(`${process.env.REACT_APP_databaseurl}/product/${id}`, {
         method: 'DELETE', // or 'PUT'
 
       }).then(res => res.json())
         .then(data => {
           console.log(data);
-          if (data.deletedCount > 0) {
-            toast.success('your item remove successfully');
-            const remainingProduct = myproducts.filter(p => p._id !== id);
-            SetmyProducts(remainingProduct)
-          }
+          // const{cycleDelete,promoDelete}=data;
+
+          toast.success('your item remove successfully');
+          const remainingProduct = myproducts.filter(p => p._id !== id);
+          SetmyProducts(remainingProduct)
+
         })
     }
   }
