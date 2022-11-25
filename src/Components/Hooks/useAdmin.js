@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 
 
-export const useSeller = (email) => {
-    const [seller, Setseller] = useState(null)
+export const useAdmin = (email) => {
+    const [admin, Setadmin] = useState(null)
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_databaseurl}/user?email=${email}`)
             .then(res => res.json())
             .then(data => {
 
-                // console.log(data.userType)
-                if (data.userType === 'Seller') {
-                    Setseller(data)
+                // console.log(data)
+                if (data.role === 'admin') {
+                    Setadmin(data)
                 }
 
             })
 
 
     }, [email])
-    return [seller]
+    return [admin]
 };
-

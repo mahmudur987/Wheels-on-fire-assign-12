@@ -2,13 +2,16 @@ import { async } from "@firebase/util";
 import { createBrowserRouter } from "react-router-dom";
 import DashBoardlayout from "../Layouts/DashBoardlayout";
 import Main from "../Layouts/Main";
+import AllBuyers from "../Pages/Dashboard/AllBuyers";
+import AllSellers from "../Pages/Dashboard/AllSellers";
 import MyBookings from "../Pages/Dashboard/MyBookings";
+import Myproducts from "../Pages/Dashboard/Myproducts";
 import Catagory from "../Pages/Home/Catagories/Catagory";
 import Details from "../Pages/Home/Cycles/Details";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
-import DisplayError from "../Pages/Shared/DispalayError/DisplayError";
 import Signup from "../Pages/Signup/Signup";
+import PrivatRoutes from "./PrivetRoutes";
 
 
 
@@ -51,13 +54,28 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashBoardlayout></DashBoardlayout>,
+        element: <PrivatRoutes> <DashBoardlayout></DashBoardlayout> </PrivatRoutes>,
         children: [
             {
                 path: '/dashboard',
                 element: <MyBookings></MyBookings>
 
-            }
+            },
+            {
+                path: '/dashboard/allbuyers',
+                element: <AllBuyers></AllBuyers>
+
+            },
+            {
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
+
+            },
+            {
+                path: '/dashboard/myproduct',
+                element: <Myproducts></Myproducts>
+
+            },
         ]
     }
 
