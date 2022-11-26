@@ -2,6 +2,7 @@ import { async } from "@firebase/util";
 import { createBrowserRouter } from "react-router-dom";
 import DashBoardlayout from "../Layouts/DashBoardlayout";
 import Main from "../Layouts/Main";
+import AddAPProduct from "../Pages/Dashboard/AddAPProduct";
 import AllBuyers from "../Pages/Dashboard/AllBuyers";
 import AllSellers from "../Pages/Dashboard/AllSellers";
 import MyBookings from "../Pages/Dashboard/MyBookings";
@@ -74,6 +75,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/myproduct',
                 element: <Myproducts></Myproducts>
+
+            },
+            {
+                path: '/dashboard/addproduct',
+                element: <AddAPProduct></AddAPProduct>
 
             },
         ]
