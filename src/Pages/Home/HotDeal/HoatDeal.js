@@ -13,7 +13,7 @@ const HoatDeal = () => {
     })
 
 
-    console.log(cycles)
+    // console.log(cycles)
 
 
 
