@@ -24,23 +24,26 @@ const Home = () => {
                 <Banner></Banner>
             </div>
             <div className=' py-10'>
-                <h1 className="text-2xl"> Hot Deals</h1>
+                <h1 className="text-3xl font-bold text-primary text-center   "> Hot Deals</h1>
 
                 <HoatDeal></HoatDeal>
             </div>
-            <div className=' py-10 h-80 border border-secondary rounded-md'>
-                <h1 className="text-3xl underline uppercase font-bold bg-secondary p-2 rounded-xl m-4 text-info"> Catagories</h1>
-                <div className='grid '>
+            <div className=' py-10 border border-secondary rounded-md'>
+                <h1 className="text-3xl underline uppercase font-bold bg-secondary p-2 rounded-xl m-4 text-info text-center"> Catagories</h1>
+                <div className='grid md: grid-cols-2 lg:grid-cols-3 gap-5'>
 
                     {
-                        catagories.map(catagory => <Link
+                        catagories.map(catagory => <div
                             key={catagory._id}
-                            to={`catagory/${catagory.catagoryId}`}
 
-                        >  <button className='text-2xl font-bold text-primary'>{catagory.catagoryName
-                        } </button>
+                        >
+                            <img className='w-72 h-80' src={catagory.image} alt="" />
 
-                        </Link>)
+                            <Link to={`catagory/${catagory.catagoryId}`} >
+                                <button className='text-2xl font-bold text-primary'>{catagory.catagoryName} </button>
+                            </Link>
+
+                        </div>)
                     }
 
 
@@ -50,7 +53,7 @@ const Home = () => {
             </div>
 
             <div className='border border-black'>
-                <h1 className="text-3xl underline uppercase font-bold bg-red-400 p-2 rounded-xl m-4 text-info">All  Cycles</h1>
+                <h1 className="text-3xl underline uppercase font-bold bg-red-400 p-2 rounded-xl m-4 text-info text-center">All  Cycles</h1>
                 <Cycles
                     cycles={cycles}
                 ></Cycles>

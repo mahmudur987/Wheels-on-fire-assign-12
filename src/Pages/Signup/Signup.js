@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Context/UserContext';
 
 
@@ -11,6 +11,9 @@ const Signup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { signUp, updateUserProfile } = useContext(authContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
 
     // console.log(createdUserEmail)
@@ -79,7 +82,7 @@ const Signup = () => {
                 console.log('Save user', data);
                 if (data.acknowledged) {
                     toast.success('user signup successfully')
-                    navigate('/')
+
                 }
             })
             .catch((error) => {
@@ -87,6 +90,9 @@ const Signup = () => {
 
                 console.error('Error:', error);
             });
+
+        navigate(from, { replace: true });
+
     }
 
 

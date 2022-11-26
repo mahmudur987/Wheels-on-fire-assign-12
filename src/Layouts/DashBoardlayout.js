@@ -33,16 +33,16 @@ const DashBoardlayout = () => {
 
 
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side border m-3 border-purple-200">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
-                        <li><Link to={'/dashboard'}>My Orders</Link></li>
+                        <li className='text-xl font-bold text-secondary '><Link to={'/dashboard'}>My Orders</Link></li>
                         {
                             (seller || admin) &&
                             <>
-                                <li><Link to={'/dashboard/addproduct'}>Add product</Link></li>
-                                <li><Link to={'/dashboard/myproduct'}>My product</Link></li>
+                                <li className='text-xl font-bold text-secondary '><Link to={'/dashboard/addproduct'}>Add product</Link></li>
+                                <li className='text-xl font-bold text-secondary '><Link to={'/dashboard/myproduct'}>My product</Link></li>
                                 {/* <li><Link to={'/dashboard/addproduct'}>Add Product</Link></li> */}
 
 
@@ -53,8 +53,8 @@ const DashBoardlayout = () => {
                         {
                             admin &&
                             <>
-                                <li><Link to={'/dashboard/allbuyers'}>  All Buyers</Link></li>
-                                <li><Link to={'/dashboard/allsellers'}>  All Sellers</Link></li>
+                                <li className='text-xl font-bold text-secondary '><Link to={'/dashboard/allbuyers'}>  All Buyers</Link></li>
+                                <li className='text-xl font-bold text-secondary '><Link to={'/dashboard/allsellers'}>  All Sellers</Link></li>
                             </>
                         }
 

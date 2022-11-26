@@ -1,5 +1,7 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../../Context/UserContext';
 // import { useNavigate } from 'react-router-dom';
@@ -18,14 +20,8 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    const { login } = useContext(authContext)
+    const { login, googleLogIn, user } = useContext(authContext)
 
-    // const [loginUserEmail, SetLoginUserEmail] = useState('')
-    // // const [token] = useToken(loginUserEmail);
-    // if (token) {
-    //     navigate('/')
-
-    // }
     const handleLogin = data => {
         console.log(data)
         login(data.email, data.password)
@@ -33,6 +29,50 @@ const Login = () => {
                 console.log(result.user);
                 navigate(from, { replace: true });
             }).catch(error => console.error(error))
+    };
+    const handleGoogleLogIn = () => {
+        const provaider = new GoogleAuthProvider();
+        if (user?.email) {
+            return toast.error('please logout first')
+        }
+
+
+        googleLogIn(provaider)
+            .then(result => {
+                const user = result.user;
+                const displayName = user.displayName;
+                const email = user.email;
+                const photoURL = user.photoURL;
+                const userType = 'buyer';
+                const fullprofile = { displayName, email, photoURL, userType };
+                // console.log(fullprofile)
+
+                fetch(`${process.env.REACT_APP_databaseurl}/users`, {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(fullprofile),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log('Save user', data);
+                        if (data.acknowledged) {
+                            toast.success('user login successfully')
+
+                        }
+                    })
+                    .catch((error) => {
+                        toast.error(error.message)
+
+                        console.error('Error:', error);
+                    });
+
+                navigate(from, { replace: true });
+
+
+            })
+            .catch(err => console.log('google login', err))
     }
 
     return (
@@ -79,11 +119,11 @@ const Login = () => {
 
 
                     <p className='text-center'>
-                        <input className='btn btn-info w-1/2' type="submit" />
+                        <input className='btn btn-info w-1/2' placeholder='Log In' type="submit" />
                     </p>
                 </form>
                 <div className="divider">OR</div>
-                <p className='text-center p-3 mt-5 uppercase'>  <button className='btn w-1/2 '> Google LogIn</button></p>
+                <p className='text-center p-3 mt-5 uppercase'>  <button onClick={handleGoogleLogIn} className='btn w-1/2 btn-accent '> Google LogIn</button></p>
 
 
 

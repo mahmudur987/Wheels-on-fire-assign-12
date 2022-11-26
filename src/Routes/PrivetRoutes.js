@@ -1,5 +1,6 @@
 import { React, useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Loading from '../Components/Loading/Loading';
 import { authContext } from '../Context/UserContext';
 
 
@@ -10,8 +11,10 @@ const PrivatRoutes = ({ children }) => {
 
     if (loading) {
         return (
-            <div className='flex w-full justify-center h-24 '>
-                <div className="w-16 h-16 text-center border-4 border-dashed rounded-full border-red-900 animate-spin dark:border-red-900"></div>
+            <div>
+
+                <Loading></Loading>
+
             </div>)
     }
 

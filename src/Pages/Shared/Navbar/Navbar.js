@@ -17,16 +17,22 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/a'}>not found</Link></li>
         <li><Link to={'/dashboard'}>DashBoard</Link></li>
-        <li><Link >MyOrder</Link></li>
+
 
         {
             user?.email ?
                 <>
                     <li><Link onClick={handleSignOut} to={'/signup'}>SignOut</Link></li>
-                    <li>{user?.email !== 'safemahmud987@gmail.com' && <Link className='text-red-800 font-bold text-2xl uppercase' >  {user?.displayName} </Link>}</li>
-                    <li><img className='w-16 rounded-full' alt='' src={user?.photoURL}></img>   </li>
-                    <li>{user?.email === 'safemahmud987@gmail.com' && <Link className='text-red-800 font-bold text-2xl uppercase' >  {user?.displayName} <span className='text-sm text-green-300 bg-red-500 p-1 rounded-3xl'>owner</span> </Link>}</li>
+
+                    <div className='grid border border-purple-400  '>
+
+                        <li className=' justify-end'><img className='w-16 inline rounded-full' alt='' src={user?.photoURL}></img>   </li>
+                        <li>{user?.email !== 'safemahmud987@gmail.com' && <Link className='text-red-800 font-bold  uppercase' >  {user?.displayName} </Link>}</li>
+
+                        <li>{user?.email === 'safemahmud987@gmail.com' && <Link className='text-red-800 text-[10px] font-bold  uppercase' >  {user?.displayName}   <span className=' text-green-300  bg-red-500  rounded-3xl text-[8px]'>Admin</span> </Link>}</li>
+                    </div>
                 </>
                 :
                 <>
@@ -50,8 +56,8 @@ const Navbar = () => {
                 </div>
                 <Link className="btn btn-ghost normal-case font-bold text-xl bg-neutral"> WHEELS ON FIRE  </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+            <div className="navbar-center hidden lg:flex flex-wrap">
+                <ul className="menu menu-horizontal m-0 p-0">
                     {menuItems}
                 </ul>
             </div>

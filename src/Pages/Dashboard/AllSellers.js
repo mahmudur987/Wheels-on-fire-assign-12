@@ -1,7 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import { data } from 'autoprefixer';
+import React, { useContext } from 'react';
+import { authContext } from '../../Context/UserContext';
 
 const AllSellers = () => {
+
+    const { user } = useContext(authContext)
+
+
+
+
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
         queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/users?userType=Seller`)
@@ -9,8 +17,22 @@ const AllSellers = () => {
 
     })
 
-    console.log(users)
 
+
+    const handelUpdateSeler = (email) => {
+        fetch(`${process.env.REACT_APP_databaseurl}/updateuser?email=${email}`, {
+            method: 'PUT', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+            });
+    }
+
+    // console.log(users)
     return (
         <div>
             <h1 className="text-3xl text-center">All SELLERS</h1>
@@ -22,7 +44,8 @@ const AllSellers = () => {
                             <th>No</th>
                             <th>Name</th>
                             <th> User Type </th>
-                            <th>Favorite Color</th>
+                            <th>verified</th>
+                            <th>verify</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +58,8 @@ const AllSellers = () => {
                                 <th>{idx + 1}</th>
                                 <td><img className='w-10 rounded-full' src={user.photoURL} alt="" /> {user.displayName} </td>
                                 <td>  {user.userType} </td>
-                                <td>Red</td>
+                                <td>{user.sellerVarified ? 'varified' : 'non varified'}</td>
+                                <td>  <button onClick={() => handelUpdateSeler(user.email)} className={`btn btn-sm btn-info ${user.sellerVarified ? 'btn-disabled bg-cyan-600' : 'enabled:'}`}>varify</button></td>
                             </tr>)
                         }
 

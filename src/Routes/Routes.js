@@ -1,4 +1,4 @@
-import { async } from "@firebase/util";
+
 import { createBrowserRouter } from "react-router-dom";
 import DashBoardlayout from "../Layouts/DashBoardlayout";
 import Main from "../Layouts/Main";
@@ -11,6 +11,8 @@ import Catagory from "../Pages/Home/Catagories/Catagory";
 import Details from "../Pages/Home/Cycles/Details";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import NotFound from "../Pages/NotFound/NotFound";
+import DisplayError from "../Pages/Shared/DispalayError/DisplayError";
 import Signup from "../Pages/Signup/Signup";
 import PrivatRoutes from "./PrivetRoutes";
 
@@ -20,7 +22,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        // errorElement: <DisplayError></DisplayError>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -50,12 +52,17 @@ export const router = createBrowserRouter([
                 }
 
             },
+            {
+                path: '*',
+                element: <NotFound></NotFound>
+            },
 
         ]
     },
     {
         path: '/dashboard',
         element: <PrivatRoutes> <DashBoardlayout></DashBoardlayout> </PrivatRoutes>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/dashboard',
@@ -82,7 +89,15 @@ export const router = createBrowserRouter([
                 element: <AddAPProduct></AddAPProduct>
 
             },
+            {
+                path: '*',
+                element: <NotFound></NotFound>
+
+            },
         ]
+    }, {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 
 ])
