@@ -10,7 +10,11 @@ const Myproducts = () => {
   const [myproducts, SetmyProducts] = useState([])
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_databaseurl}/cycles/myproduct?email=${user?.email}`)
+    axios.get(`${process.env.REACT_APP_databaseurl}/cycles/myproduct?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
+    })
       .then(function (response) {
 
         SetmyProducts(response.data)
@@ -23,7 +27,9 @@ const Myproducts = () => {
     if (sure) {
       fetch(`${process.env.REACT_APP_databaseurl}/product/${id}`, {
         method: 'DELETE', // or 'PUT'
-
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
       }).then(res => res.json())
         .then(data => {
           console.log(data);

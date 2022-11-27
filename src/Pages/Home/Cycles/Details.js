@@ -33,6 +33,8 @@ const Details = () => {
 
 
                 <div className="card-actions justify-end">
+                    <button className='btn btn-info'> Add to Wish list </button>
+
                     <label htmlFor="my-modal-6" className="btn btn-primary">Booked Now</label>
                 </div>
             </div>

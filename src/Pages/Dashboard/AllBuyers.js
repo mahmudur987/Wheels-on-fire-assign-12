@@ -5,7 +5,11 @@ const AllBuyers = () => {
 
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/users?userType=Buyer`)
+        queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/users?userType=Buyer`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
 
     })

@@ -17,7 +17,7 @@ const Navbar = () => {
 
     const menuItems = <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/a'}>not found</Link></li>
+        <li><Link to={'/blog'}>Blog</Link></li>
         <li><Link to={'/dashboard'}>DashBoard</Link></li>
 
 

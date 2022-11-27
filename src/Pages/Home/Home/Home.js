@@ -9,14 +9,12 @@ const Home = () => {
     const [cycles, SetCycles] = useState([]);
     const [catagories, SetCatagories] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/cycles').then(res => res.json()).then(data => SetCycles(data))
+        fetch(`${process.env.REACT_APP_databaseurl}/cycles`).then(res => res.json()).then(data => SetCycles(data))
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/catagories').then(res => res.json()).then(data => SetCatagories(data))
+        fetch(`${process.env.REACT_APP_databaseurl}/catagories`).then(res => res.json()).then(data => SetCatagories(data))
     }, [])
 
-
-    // console.log(catagories)
 
     return (
         <div>

@@ -10,7 +10,12 @@ const MyBookings = () => {
     const { user } = useContext(authContext);
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['userbooking', `${user?.email}`],
-        queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/userbooking?email=${user?.email}`)
+        queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/userbooking?email=${user?.email}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json()
             )
 
@@ -33,6 +38,7 @@ const MyBookings = () => {
                             method: "PATCH",
                             headers: {
                                 'Content-Type': 'application/json',
+                                authorization: `Bearer ${localStorage.getItem('accessToken')}`
                             }
                         }).then(res => res.json())
                             .then(data => {

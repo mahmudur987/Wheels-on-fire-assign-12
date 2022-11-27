@@ -26,7 +26,17 @@ const Login = () => {
         console.log(data)
         login(data.email, data.password)
             .then(result => {
+                const user = result.user;
+
                 console.log(result.user);
+
+                fetch(`${process.env.REACT_APP_databaseurl}/jwt?email=${user.email}`).then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('accessToken', data.accessToken)
+                    })
+
+
                 navigate(from, { replace: true });
             }).catch(error => console.error(error))
     };
@@ -46,6 +56,12 @@ const Login = () => {
                 const userType = 'buyer';
                 const fullprofile = { displayName, email, photoURL, userType };
                 // console.log(fullprofile)
+
+                fetch(`${process.env.REACT_APP_databaseurl}/jwt?email=${user.email}`).then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('accessToken', data.accessToken)
+                    })
 
                 fetch(`${process.env.REACT_APP_databaseurl}/users`, {
                     method: 'POST', // or 'PUT'

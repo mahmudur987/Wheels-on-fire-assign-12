@@ -2,6 +2,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashBoardlayout from "../Layouts/DashBoardlayout";
 import Main from "../Layouts/Main";
+import Blogs from "../Pages/Blog/Blog";
 import AddAPProduct from "../Pages/Dashboard/AddAPProduct";
 import AllBuyers from "../Pages/Dashboard/AllBuyers";
 import AllSellers from "../Pages/Dashboard/AllSellers";
@@ -14,6 +15,7 @@ import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import DisplayError from "../Pages/Shared/DispalayError/DisplayError";
 import Signup from "../Pages/Signup/Signup";
+import AdminRoutes from "./AdminRoutes";
 import PrivatRoutes from "./PrivetRoutes";
 
 
@@ -31,6 +33,10 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/blog',
+                element: <Blogs></Blogs>
             },
             {
                 path: '/signup',
@@ -66,27 +72,27 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard',
-                element: <MyBookings></MyBookings>
+                element: <PrivatRoutes> <MyBookings></MyBookings> </PrivatRoutes>
 
             },
             {
                 path: '/dashboard/allbuyers',
-                element: <AllBuyers></AllBuyers>
+                element: <AdminRoutes>  <AllBuyers></AllBuyers> </AdminRoutes>
 
             },
             {
                 path: '/dashboard/allsellers',
-                element: <AllSellers></AllSellers>
+                element: <AdminRoutes> <AllSellers></AllSellers>  </AdminRoutes>
 
             },
             {
                 path: '/dashboard/myproduct',
-                element: <Myproducts></Myproducts>
+                element: <PrivatRoutes><Myproducts></Myproducts> </PrivatRoutes>
 
             },
             {
                 path: '/dashboard/addproduct',
-                element: <AddAPProduct></AddAPProduct>
+                element: <PrivatRoutes> <AddAPProduct></AddAPProduct> </PrivatRoutes>
 
             },
             {

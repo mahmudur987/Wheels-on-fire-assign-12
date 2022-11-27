@@ -1,15 +1,16 @@
 import { React, useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import { useAdmin } from '../Components/Hooks/useAdmin';
 import { authContext } from '../Context/UserContext';
-import useAdmin from '../hooks/useAdmin';
+
 
 
 const AdminRoutes = ({ children }) => {
     const location = useLocation()
     const { user, loading } = useContext(authContext);
     console.log(user)
-    const [isAdmin, adminLoading] = useAdmin(user?.email)
-    console.log(isAdmin)
+    const [admin, adminLoading] = useAdmin(user?.email)
+    console.log(admin)
 
     if (loading || adminLoading) {
         return (
@@ -18,7 +19,7 @@ const AdminRoutes = ({ children }) => {
             </div>)
     }
 
-    if (user && isAdmin) {
+    if (admin) {
         // Redirect them to the /login page, but save the current location they were
         // trying to go to when they were redirected. This allows us to send them
         // along to that page after they login, which is a nicer user experience

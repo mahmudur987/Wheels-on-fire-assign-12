@@ -12,7 +12,11 @@ const AllSellers = () => {
 
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/users?userType=Seller`)
+        queryFn: () => fetch(`${process.env.REACT_APP_databaseurl}/users?userType=Seller`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
 
     })
@@ -24,6 +28,7 @@ const AllSellers = () => {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
 
         }).then(res => res.json())
@@ -59,7 +64,7 @@ const AllSellers = () => {
                                 <td><img className='w-10 rounded-full' src={user.photoURL} alt="" /> {user.displayName} </td>
                                 <td>  {user.userType} </td>
                                 <td>{user.sellerVarified ? 'varified' : 'non varified'}</td>
-                                <td>  <button onClick={() => handelUpdateSeler(user.email)} className={`btn btn-sm btn-info ${user.sellerVarified ? 'btn-disabled bg-cyan-600' : 'enabled:'}`}>varify</button></td>
+                                <td>  <button onClick={() => handelUpdateSeler(user.email)} className={`btn btn-sm btn-info ${user.sellerVarified ? 'btn-disabled' : 'enabled:'}`}>varify</button></td>
                             </tr>)
                         }
 

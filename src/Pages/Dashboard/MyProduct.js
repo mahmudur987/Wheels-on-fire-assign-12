@@ -13,6 +13,7 @@ const MyProduct = ({ myproduct, handleDelete }) => {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(myproduct),
         }).then(res => res.json())

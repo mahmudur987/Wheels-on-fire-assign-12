@@ -44,6 +44,17 @@ const Signup = () => {
                     const photoURL = imagedata.data.display_url;
                     signUp(data.email, data.password)
                         .then(result => {
+
+                            const user = result.user;
+
+                            fetch(`${process.env.REACT_APP_databaseurl}/jwt?email=${user.email}`).then(res => res.json())
+                                .then(data => {
+                                    console.log(data);
+                                    localStorage.setItem('accessToken', data.accessToken)
+                                })
+
+
+
                             updateProfile(data.name, photoURL, data.email, data.userType)
                         }).catch(error => {
                             toast.error(error.message)
