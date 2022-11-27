@@ -1,0 +1,17 @@
+[
+    {
+        "price": "$500",
+        "picture": "https://media.istockphoto.com/id/615281154/photo/mechanic-repairing-bicycle-rear-wheel.jpg?s=170667a&w=is&k=20&c=g5bwv6-GGxymBhQwUXWiJatxgWUnV2qcbkRfd0n4yJ8=",
+        "ServiceName": "Full Servicing"
+    },
+    {
+        "price": "$50",
+        "picture": "https://i.ytimg.com/vi/tlAHdFCEiWg/maxresdefault.jpg",
+        "ServiceName": "Oiling and finding Problem"
+    },
+    {
+        "price": "$364.12",
+        "picture": "https://static-01.daraz.com.bd/p/bfd031e5b519350e92f1037e4fbe8d62.jpg",
+        "ServiceName": "Suspence Cleaning"
+    }
+]

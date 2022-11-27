@@ -15,6 +15,7 @@ import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import DisplayError from "../Pages/Shared/DispalayError/DisplayError";
 import Signup from "../Pages/Signup/Signup";
+import WishList from "../Pages/WishList/WishList";
 import AdminRoutes from "./AdminRoutes";
 import PrivatRoutes from "./PrivetRoutes";
 
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/wishlist',
+                element: <WishList></WishList>
             },
             {
                 path: '/signup',

@@ -16,15 +16,16 @@ const Navbar = () => {
 
 
     const menuItems = <>
-        <li><Link to={'/'}>Home</Link></li>
-        <li><Link to={'/blog'}>Blog</Link></li>
-        <li><Link to={'/dashboard'}>DashBoard</Link></li>
+        <li><Link to={'/'}>HOME</Link></li>
+        <li><Link to={'/blog'}>BLOG</Link></li>
+        <li><Link to={'/dashboard'}>DASHBOARD</Link></li>
+        <li><Link to={'/wishlist'}>WISHLIST</Link></li>
 
 
         {
             user?.email ?
                 <>
-                    <li><Link onClick={handleSignOut} to={'/signup'}>SignOut</Link></li>
+                    <li><Link onClick={handleSignOut} to={'/signup'}>SIGNOUT</Link></li>
 
                     <div className='grid border border-purple-400  '>
 
@@ -36,8 +37,8 @@ const Navbar = () => {
                 </>
                 :
                 <>
-                    <li><Link to={'/login'}>Login</Link></li>
-                    <li><Link to={'/signup'}>Signup</Link></li>
+                    <li><Link to={'/login'}>LOGIN</Link></li>
+                    <li><Link to={'/signup'}>SIGNUP</Link></li>
                 </>
         }
 

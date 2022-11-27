@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Cycles from '../Cycles/Cycles';
 import HoatDeal from '../HotDeal/HoatDeal';
+import Services from '../Services/Services';
 
 const Home = () => {
     const [cycles, SetCycles] = useState([]);
@@ -58,7 +59,11 @@ const Home = () => {
 
             </div>
 
+            <div className='mt-10 border'>
+                <h1 className="text-3xl underline uppercase font-bold bg-cyan-400 p-2 rounded-xl m-4 text-info text-center"> OUR SERVICES </h1>
 
+                <Services></Services>
+            </div>
 
         </div>
     );
