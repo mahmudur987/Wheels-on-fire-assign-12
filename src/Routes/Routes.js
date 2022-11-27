@@ -8,6 +8,7 @@ import AllBuyers from "../Pages/Dashboard/AllBuyers";
 import AllSellers from "../Pages/Dashboard/AllSellers";
 import MyBookings from "../Pages/Dashboard/MyBookings";
 import Myproducts from "../Pages/Dashboard/Myproducts";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 import Catagory from "../Pages/Home/Catagories/Catagory";
 import Details from "../Pages/Home/Cycles/Details";
 import Home from "../Pages/Home/Home/Home";
@@ -98,6 +99,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/addproduct',
                 element: <PrivatRoutes> <AddAPProduct></AddAPProduct> </PrivatRoutes>
+
+            },
+            {
+                path: '/dashboard/cheakout/:id',
+                element: <Payment></Payment>,
+                loader: (params) => fetch(`${process.env.REACT_APP_databaseurl}/payment/${params.id}`)
 
             },
             {

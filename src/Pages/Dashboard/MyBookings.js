@@ -3,6 +3,7 @@ import { data } from 'autoprefixer';
 import { id } from 'date-fns/locale';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { authContext } from '../../Context/UserContext';
 
 const MyBookings = () => {
@@ -93,7 +94,7 @@ const MyBookings = () => {
 
                             </td>
                             <td>
-                                <button className='btn btn-primary btn-sm'>Confirm</button>
+                                <Link to={`/dashboard/cheakout/${booking._id}`}>  <button className='btn btn-primary btn-sm'>Confirm</button> </Link>
                                 <button onClick={() => handleDelete(booking._id, booking.productId)} className='btn btn-info m-1 btn-sm'>Delete</button>
                             </td>
                         </tr>

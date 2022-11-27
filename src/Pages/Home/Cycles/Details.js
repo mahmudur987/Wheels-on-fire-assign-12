@@ -13,9 +13,10 @@ const Details = () => {
     const { productTitle, catagoryName
         , userName, brand, condition, price, location, registered, usingDuration, sold, picture, about, phone, _id
     } = cycle;
-    // console.log(cycle)
+    console.log(_id)
     const handleAddToWishList = (id) => {
-        fetch(`${process.env.REACT_APP_databaseurl}/wishlist/${id}`, {
+        // ${process.env.REACT_APP_databaseurl}
+        fetch(`https://assign-12-server.vercel.app/wishlist/${id}`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ const Details = () => {
                 if (data.acknowledged) {
                     toast.success('this item aadded to wish list')
                 }
-            })
+            }).catch(err => console.error('error', err))
 
     }
 

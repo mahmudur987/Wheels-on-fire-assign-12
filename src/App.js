@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 
 function App() {
-
+  // console.log(`${process.env.REACT_APP_databaseurl}`)
 
   return (
     <div className="lg:w-[95%] mx-auto">
