@@ -12,14 +12,14 @@ const Services = () => {
     console.log(services)
 
     return (
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-20'>
+        <div className='  text-center grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-20'>
             {
                 services.map((service, idx) => <div className="card  bg-base-100 shadow-xl"
                     key={idx}
 
 
                 >
-                    <figure><img className='w-80 h-80' src={service.picture} alt="Shoes" /></figure>
+                    <figure><img className='w-80 lg:w-9/12 h-80' src={service.picture} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title"> {service.ServiceName} </h2>
                         <p className='text-xl text-primary font-bold'> Price :{service.price} </p>

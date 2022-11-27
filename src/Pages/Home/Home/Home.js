@@ -27,16 +27,16 @@ const Home = () => {
 
                 <HoatDeal></HoatDeal>
             </div>
-            <div className=' py-10 border border-secondary rounded-md'>
+            <div className=' py-10 border border-secondary m-5 text-center rounded-md'>
                 <h1 className="text-3xl underline uppercase font-bold bg-secondary p-2 rounded-xl m-4 text-info text-center"> Catagories</h1>
-                <div className='grid md: grid-cols-2 lg:grid-cols-3 gap-5'>
+                <div className='grid md: grid-cols-2 lg:grid-cols-3 lg:gap-5'>
 
                     {
                         catagories.map(catagory => <div
                             key={catagory._id}
 
                         >
-                            <img className='w-72 h-80' src={catagory.image} alt="" />
+                            <img className=' w-full lg:w-9/12 h-80' src={catagory.image} alt="" />
 
                             <Link to={`catagory/${catagory.catagoryId}`} >
                                 <button className='text-2xl font-bold text-primary'>{catagory.catagoryName} </button>
