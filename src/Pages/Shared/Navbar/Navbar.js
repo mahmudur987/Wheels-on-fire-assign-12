@@ -62,7 +62,7 @@ const Navbar = ({ dashboard, Setdashboard }) => {
                 <Link className="text-red-800 text-[10px] font-bold  uppercase">
                   {" "}
                   {user?.displayName}{" "}
-                  <span className=" text-green-300  bg-red-500  rounded-3xl text-[8px]">
+                  <span className=" text-green-400  bg-red-500  rounded-3xl text-[8px]">
                     Admin
                   </span>{" "}
                 </Link>
@@ -73,7 +73,7 @@ const Navbar = ({ dashboard, Setdashboard }) => {
       ) : (
         <>
           <li>
-            <Link to={"/login"}>LOGIN</Link>
+            <Link to={"/login"}>LOGIN </Link>
           </li>
           <li>
             <Link to={"/signup"}>SIGNUP</Link>
