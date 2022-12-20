@@ -1,20 +1,21 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Footer from '../Pages/Shared/Footer/Footer';
-import Navbar from '../Pages/Shared/Navbar/Navbar';
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "../Pages/Shared/Footer/Footer";
+import Navbar from "../Pages/Shared/Navbar/Navbar";
 
 const Main = () => {
-    return (
-        <div>
+  const [dashboard, Setdashboard] = useState(false);
+  console.log(dashboard);
 
-            <Navbar></Navbar>
+  return (
+    <div>
+      <Navbar dashboard={dashboard} Setdashboard={Setdashboard}></Navbar>
 
+      <Outlet></Outlet>
 
-            <Outlet></Outlet>
-
-            <Footer></Footer>
-        </div>
-    );
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default Main;
