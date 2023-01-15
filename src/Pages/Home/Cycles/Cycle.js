@@ -18,7 +18,7 @@ const Cycle = ({ cycle }) => {
   } = cycle;
   // console.log(sellerVarified)
   return (
-    <div className="card w-full  bg-base-100 shadow-xl">
+    <div className="card w-full  bg-base-100 shadow-xl m-1">
       <figure className="px-10 pt-10">
         <PhotoProvider>
           <PhotoView src={picture}>
@@ -35,21 +35,21 @@ const Cycle = ({ cycle }) => {
         <p className="text-xl font-extrabold">Price :{price}</p>
         <p>
           Location :{location}{" "}
-          <span className="text-red-600 font-extrabold bg-green-400 rounded-full p-2 text-sm  ">
+          <span className="text-secondary font-extrabold bg-green-200 rounded-full p-2 text-sm  ">
             {" "}
             {sold ? "Booked" : "available"}{" "}
           </span>{" "}
         </p>
         <p>
           Posted By :{userName}{" "}
-          <span className=" rounded-full bg-red-600 text-green-200 p-1">
+          <span className=" rounded-full bg-red-100 text-secondary p-1">
             {sellerVarified ? "varified" : "new Seller"}
           </span>{" "}
         </p>
 
-        <div className="card-actions">
+        <div className="card-actions justify-end">
           <Link to={`/cycle/${_id}`}>
-            <button className="btn btn-primary">Details </button>
+            <button className="btn btn-accent btn-sm">Details </button>
           </Link>
         </div>
       </div>

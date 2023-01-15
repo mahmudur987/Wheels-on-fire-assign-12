@@ -1,18 +1,20 @@
 import React from "react";
+import "./Banner.css";
 
 const Banner = () => {
   return (
     <div className="carousel w-full h-96 lg:h-[600px]">
-      <div id="slide1" className="carousel-item relative w-full">
+      <div id="slide1" className="carousel-item    relative w-full">
         <img
           alt=""
           src="https://images.unsplash.com/photo-1529422643029-d4585747aaf2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          className="w-full h-full"
+          className="w-full h-full "
         />
+
         <div className="absolute left-16 top-1/3 w-full">
-          <h1 className="text-red-500 text-3xl md:text-6xl lg:text-7xl font-extrabold">
+          <h1 className="text-secondary text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold   ">
             Second Hand Cycle All <br />
-            <span className="text-sky-700 block text-center"> Bangladesh</span>
+            <span className="text-sky-100 block text-center"> Bangladesh</span>
           </h1>
         </div>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -33,9 +35,9 @@ const Banner = () => {
         />
 
         <div className="absolute left-16 top-1/3 w-full">
-          <h1 className="text-red-500 text-3xl md:text-6xl lg:text-7xl font-extrabold">
+          <h1 className="text-secondary text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold">
             Second Hand Cycle All <br />
-            <span className="text-sky-700 block text-center"> Bangladesh</span>
+            <span className="text-sky-100 block text-center"> Bangladesh</span>
           </h1>
         </div>
 
@@ -56,9 +58,9 @@ const Banner = () => {
           className="w-full h-full"
         />
         <div className="absolute left-16 top-1/3 w-full">
-          <h1 className="text-red-500 text-3xl md:text-6xl lg:text-7xl font-extrabold">
+          <h1 className="text-secondary text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold">
             Second Hand Cycle All <br />
-            <span className="text-sky-700 block text-center"> Bangladesh</span>
+            <span className="text-sky-100 block text-center"> Bangladesh</span>
           </h1>
         </div>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -78,9 +80,9 @@ const Banner = () => {
           className="w-full"
         />
         <div className="absolute left-16 top-1/3 w-full">
-          <h1 className="text-red-500 text-3xl md:text-6xl lg:text-7xl font-extrabold">
+          <h1 className="text-secondary text-2xl  sm:text-4xl md:text-6xl lg:text-7xl font-extrabold">
             Second Hand Cycle All <br />
-            <span className="text-sky-700 block text-center"> Bangladesh</span>
+            <span className="text-sky-100 block text-center"> Bangladesh</span>
           </h1>
         </div>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

@@ -33,12 +33,9 @@ const Footer = () => {
           <Link className=" font-bold text-xl link link-hover">
             Privacy policy
           </Link>
-          <Link className=" font-bold text-xl link link-hover">
-            Cookie policy
-          </Link>
         </div>
       </footer>
-      <p className="text-center text-red-800 font-bold">
+      <p className="text-center text-red-50 font-bold">
         Copyright © 2022 - All right reserved
       </p>
     </div>

@@ -20,11 +20,11 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
   const [user, SetUser] = useState({});
-  const [loading, Setloading] = useState(true);
+  const [loading, Setloading] = useState(false);
   const [cart, SetCart] = useState({});
   const [theme, SetTheme] = useState(false);
   const [selectedDate, SetSelectedDate] = useState(new Date());
-
+  const [dashboard, Setdashboard] = useState(true);
   const signUp = (email, password) => {
     Setloading(true);
 
@@ -91,6 +91,8 @@ const UserContext = ({ children }) => {
     Setloading,
     selectedDate,
     SetSelectedDate,
+    dashboard,
+    Setdashboard,
   };
   return (
     <authContext.Provider value={authinfo}>{children}</authContext.Provider>

@@ -25,23 +25,23 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <div className=" py-10">
-        <h1 className="text-3xl lg:text-7xl font-bold text-primary text-center   ">
+        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center ">
           {" "}
           Hot Deals
         </h1>
 
         <HoatDeal></HoatDeal>
       </div>
-      <div className=" py-10 border border-secondary m-5 text-center rounded-md">
-        <h1 className="text-3xl underline uppercase font-bold bg-secondary p-2 rounded-xl m-4 text-info text-center">
+      <div className=" py-10 p-3 text-center rounded-md">
+        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           {" "}
           Catagories
         </h1>
-        <div className="grid md: grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="grid  md:grid-cols-2 lg:grid-cols-3 bg-secondary  ">
           {catagories.map((catagory) => (
-            <div key={catagory._id}>
+            <div className="my-14" key={catagory._id}>
               <img
-                className=" w-full lg:w-9/12 h-80"
+                className=" w-full mx-auto lg:w-9/12 h-80"
                 src={catagory.image}
                 alt=""
               />
@@ -56,15 +56,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="border border-black">
-        <h1 className="text-3xl lg:text-5xl  underline uppercase font-bold bg-red-400 p-2 rounded-xl m-4 text-info text-center">
+      <div className="p-1">
+        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           All Cycles
         </h1>
         <Cycles cycles={cycles}></Cycles>
       </div>
 
       <div className="mt-10 border">
-        <h1 className="text-3xl lg:text-5xl underline uppercase font-bold bg-cyan-400 p-2 rounded-xl m-4 text-info text-center">
+        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           {" "}
           OUR SERVICES{" "}
         </h1>

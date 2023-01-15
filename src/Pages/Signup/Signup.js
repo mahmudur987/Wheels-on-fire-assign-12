@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -45,7 +45,7 @@ const Signup = () => {
           const photoURL = imagedata.data.display_url;
           signUp(data.email, data.password)
             .then((result) => {
-              const user = result.user;
+              // const user = result.user;
 
               updateProfile(data.name, photoURL, data.email, data.userType);
             })
@@ -222,7 +222,7 @@ const Signup = () => {
           </div>
 
           <p className="text-center">
-            <input className=" btn w-1/2" type="submit" />
+            <input className=" btn btn-primary w-1/2" type="submit" />
           </p>
         </form>
       </div>

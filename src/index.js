@@ -1,23 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import UserContext from './Context/UserContext';
-import 'react-photo-view/dist/react-photo-view.css';
-import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
-const queryClient = new QueryClient()
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import UserContext from "./Context/UserContext";
+import "react-photo-view/dist/react-photo-view.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <UserContext>
         <App />
-
       </UserContext>
-
     </QueryClientProvider>
-
   </React.StrictMode>
 );
 

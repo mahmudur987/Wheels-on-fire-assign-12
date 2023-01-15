@@ -4,12 +4,9 @@ import Footer from "../Pages/Shared/Footer/Footer";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 
 const Main = () => {
-  const [dashboard, Setdashboard] = useState(false);
-  console.log(dashboard);
-
   return (
     <div>
-      <Navbar dashboard={dashboard} Setdashboard={Setdashboard}></Navbar>
+      <Navbar></Navbar>
 
       <Outlet></Outlet>
 

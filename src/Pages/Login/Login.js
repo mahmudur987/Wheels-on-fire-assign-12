@@ -87,32 +87,34 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-red-100 font-bold md:flex">
-      <div className="md:w-1/2  md:mx-5 flex items-center ">
+    <section className="bg-base-200 font-bold md:flex">
+      <div className="md:w-1/2  md:mx-5 flex items-center  ">
         <img
-          className="h-96 "
+          className="h-96 mx-auto "
           src="https://images.unsplash.com/photo-1633265486064-086b219458ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt=""
         />
       </div>
 
-      <div className="border border-black my-10 md:w-1/2 ">
-        <h1 className="text-4xl text-center font bold mb-10"> Log In</h1>
+      <div className=" my-10 md:w-1/2 ">
+        <h1 className="text-4xl text-center font bold mb-10"> LOG IN</h1>
+        <p className="text-center">Admin Email :safemahmud987@gmail.com</p>
+        <p className="text-center">Admin Password :123456A@9</p>
         <form className="" onSubmit={handleSubmit(handleLogin)}>
-          <div className="form-control w-full ">
-            <label className="label">
+          <div className="form-control w-full text-center ">
+            <label className="label mx-auto">
               <span className="label-text">Email</span>
             </label>
             <input
               type="text"
               {...register("email", { required: "email is required" })}
               placeholder="Email"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full mx-auto lg:w-2/3"
             />
             {errors.email && <p role="alert">{errors.email?.message}</p>}
           </div>
-          <div className="form-control w-full ">
-            <label className="label">
+          <div className="form-control w-full  ">
+            <label className="label mx-auto">
               <span className="label-text">Password</span>
             </label>
             <input
@@ -125,13 +127,13 @@ const Login = () => {
                 },
               })}
               placeholder="Password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full mx-auto lg:w-2/3"
             />
             {errors.password && <p role="alert">{errors.password?.message}</p>}
           </div>
 
-          <label className="label">
-            <span className="label-text-alt">Forget password</span>
+          <label className="label text-center">
+            <span className="label-text-alt mx-auto">Forget password</span>
           </label>
 
           <p className="text-center">
