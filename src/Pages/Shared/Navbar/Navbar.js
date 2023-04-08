@@ -5,8 +5,6 @@ import { authContext } from "../../../Context/UserContext";
 const Navbar = () => {
   const { user, logout, dashboard, Setdashboard } = useContext(authContext);
 
-  console.log(dashboard);
-
   const handleSignOut = () => {
     logout()
       .then((result) => {
@@ -58,8 +56,8 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <div className="grid border border-purple-400  ">
-            <li className=" justify-end">
+          <div className="grid border  ">
+            <li className=" justify-center">
               <img
                 className="w-16 inline rounded-full"
                 alt=""
@@ -70,7 +68,7 @@ const Navbar = () => {
               {user?.email !== "safemahmud987@gmail.com" && (
                 <Link
                   onClick={() => Setdashboard(false)}
-                  className="text-red-800 font-bold  uppercase"
+                  className=" font-bold  uppercase"
                 >
                   {" "}
                   {user?.displayName}{" "}
@@ -143,13 +141,13 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <Link className="btn btn-ghost normal-case font-bold text-xl bg-neutral">
+        <Link className="btn btn-ghost normal-case font-bold text-xl md:text-2xl lg:text-4xl  bg-neutral">
           {" "}
           WHEELS ON FIRE{" "}
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex flex-wrap">
-        <ul className="menu menu-horizontal m-0 p-0       ">{menuItems}</ul>
+        <ul className="menu menu-horizontal m-0 p-0">{menuItems}</ul>
       </div>
     </div>
   );

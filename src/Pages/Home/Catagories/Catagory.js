@@ -7,7 +7,7 @@ const Catagory = () => {
   // console.log(cycles)
   return (
     <div>
-      <h1 className="text-4xl font-bold text-neutral my-20 bg-primary p-5 rounded-2xl w-9/12 mx-auto">
+      <h1 className="text-4xl font-bold text-neutral my-10 uppercase ">
         {cycles[0].catagoryName}
       </h1>
 

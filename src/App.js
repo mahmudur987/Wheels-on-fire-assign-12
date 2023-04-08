@@ -7,7 +7,7 @@ function App() {
   // console.log(`${process.env.REACT_APP_databaseurl}`)
 
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="max-w-[1440px] mx-auto  ">
       <RouterProvider router={router}></RouterProvider>
       <Toaster></Toaster>
     </div>

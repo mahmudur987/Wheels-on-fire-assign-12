@@ -1,6 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { data } from "autoprefixer";
-import { id } from "date-fns/locale";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";

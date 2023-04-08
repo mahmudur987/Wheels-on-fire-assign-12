@@ -49,7 +49,7 @@ const Cycle = ({ cycle }) => {
 
         <div className="card-actions justify-end">
           <Link to={`/cycle/${_id}`}>
-            <button className="btn btn-accent btn-sm">Details </button>
+            <button className="btn btn-secondary btn-sm">Details </button>
           </Link>
         </div>
       </div>

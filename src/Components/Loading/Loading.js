@@ -2,13 +2,8 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div class="flex items-center justify-center space-x-2 h-[700px]">
-      <div
-        className="spinner-border border-black animate-spin inline-block w-12 h-12 border-4 rounded-full"
-        role="status"
-      >
-        <span className="visually-hidden text-red-400"> O</span>
-      </div>
+    <div class="flex justify-center items-center">
+      <div class="animate-spin rounded-full h-32 w-32 border-t-8 border-b-8 border-gray-900"></div>
     </div>
   );
 };
