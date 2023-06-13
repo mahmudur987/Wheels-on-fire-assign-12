@@ -31,7 +31,7 @@ const MyProduct = ({ myproduct, handleDelete }) => {
       <div className="card-body">
         <h2 className="card-title"> {productTitle} </h2>
         <p>publishd date : {registered} </p>
-        <p className=" font-bold text-xl text-lime-50 bg-red-500 w-24 p-1 ">
+        <p className=" font-bold text-xl text-lime-50 rounded-md bg-red-500 w-24 p-1 ">
           {" "}
           {sold ? "Booked" : "Available"}{" "}
         </p>

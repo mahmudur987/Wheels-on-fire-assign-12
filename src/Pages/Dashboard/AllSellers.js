@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 
 const AllSellers = () => {
-  const { data: users = [] } = useQuery({
+  const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
       fetch(`${process.env.REACT_APP_databaseurl}/users?userType=Seller`, {
@@ -23,6 +23,7 @@ const AllSellers = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        refetch();
       });
   };
 

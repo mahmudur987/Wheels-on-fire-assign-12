@@ -109,9 +109,9 @@ const Signup = () => {
   }
 
   return (
-    <div className="h-[1000px] flex justify-center items-center font-bold bg-sky-100">
-      <div className="border border-black p-4">
-        <h1 className="text-4xl">Sign up</h1>
+    <div className="h-[800px] flex justify-center items-center font-bold ">
+      <div className="border border-info max-w-2xl p-4">
+        <h1 className="text-4xl text-center uppercase">Sign up</h1>
         <form onSubmit={handleSubmit(handleSignUp)}>
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -216,12 +216,9 @@ const Signup = () => {
                 {errors.password?.message}
               </p>
             )}
-            <label className="label">
-              <span className="label-text-alt">Forget password</span>
-            </label>
           </div>
 
-          <p className="text-center">
+          <p className="text-center mt-3">
             <input className=" btn btn-primary w-1/2" type="submit" />
           </p>
         </form>

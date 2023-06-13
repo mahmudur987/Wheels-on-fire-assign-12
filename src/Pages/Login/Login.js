@@ -20,7 +20,6 @@ const Login = () => {
   const { login, googleLogIn, user } = useContext(authContext);
 
   const handleLogin = (data) => {
-    console.log(data);
     login(data.email, data.password)
       .then((result) => {
         const user = result.user;
@@ -30,13 +29,15 @@ const Login = () => {
         fetch(`${process.env.REACT_APP_databaseurl}/jwt?email=${user.email}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("accessToken", data.accessToken);
           });
 
         navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        toast.error(error.message.slice(22, 100));
+        console.error("Error", error.message);
+      });
   };
   const handleGoogleLogIn = () => {
     const provaider = new GoogleAuthProvider();
@@ -113,7 +114,7 @@ const Login = () => {
             />
             {errors.email && <p role="alert">{errors.email?.message}</p>}
           </div>
-          <div className="form-control w-full  ">
+          <div className="form-control w-full text-center  ">
             <label className="label mx-auto">
               <span className="label-text">Password</span>
             </label>
@@ -137,11 +138,14 @@ const Login = () => {
           </label>
 
           <p className="text-center">
-            <input
+            <button
               className="btn btn-info w-1/2"
               placeholder="Log In"
               type="submit"
-            />
+            >
+              {" "}
+              Log In
+            </button>
           </p>
         </form>
         <div className="divider">OR</div>

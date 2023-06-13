@@ -16,7 +16,6 @@ const Cycle = ({ cycle }) => {
     picture,
     _id,
   } = cycle;
-  // console.log(sellerVarified)
   return (
     <div className="card w-full  bg-base-100 shadow-xl m-1">
       <figure className="px-10 pt-10">

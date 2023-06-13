@@ -50,7 +50,6 @@ const MyBookings = () => {
     } else {
     }
   };
-  // console.log(bookings)
 
   return (
     <div className="overflow-x-auto overflow-y-auto w-full">

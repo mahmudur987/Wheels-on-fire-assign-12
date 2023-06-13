@@ -19,16 +19,17 @@ import WishList from "../Pages/WishList/WishList";
 import AdminRoutes from "./AdminRoutes";
 import PrivatRoutes from "./PrivetRoutes";
 import AllCycles from "../Pages/Home/allCycle/AllCycles";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <DisplayError></DisplayError>,
+    errorElement: <DisplayError />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/allcycle",
@@ -36,23 +37,32 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: <Login />,
       },
       {
         path: "/blog",
-        element: <Blogs></Blogs>,
+        element: <Blogs />,
       },
       {
         path: "/wishlist",
-        element: <WishList></WishList>,
+        element: (
+          <PrivatRoutes>
+            {" "}
+            <WishList />
+          </PrivatRoutes>
+        ),
       },
       {
         path: "/signup",
-        element: <Signup></Signup>,
+        element: <Signup />,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs />,
       },
       {
         path: "/catagory/:id",
-        element: <Catagory></Catagory>,
+        element: <Catagory />,
         loader: async ({ params }) => {
           return fetch(
             `${process.env.REACT_APP_databaseurl}/cycles/${params.id}`
@@ -61,7 +71,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cycle/:id",
-        element: <Details></Details>,
+        element: <Details />,
         loader: async ({ params }) => {
           return fetch(
             `${process.env.REACT_APP_databaseurl}/cycle/${params.id}`
@@ -70,7 +80,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <NotFound></NotFound>,
+        element: <NotFound />,
       },
     ],
   },
@@ -89,7 +99,7 @@ export const router = createBrowserRouter([
         element: (
           <PrivatRoutes>
             {" "}
-            <MyBookings></MyBookings>{" "}
+            <MyBookings />{" "}
           </PrivatRoutes>
         ),
       },
@@ -98,7 +108,7 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoutes>
             {" "}
-            <AllBuyers></AllBuyers>{" "}
+            <AllBuyers />
           </AdminRoutes>
         ),
       },
@@ -107,7 +117,7 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoutes>
             {" "}
-            <AllSellers></AllSellers>{" "}
+            <AllSellers />
           </AdminRoutes>
         ),
       },
@@ -115,7 +125,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/myproduct",
         element: (
           <PrivatRoutes>
-            <Myproducts></Myproducts>{" "}
+            <Myproducts />
           </PrivatRoutes>
         ),
       },
@@ -124,7 +134,7 @@ export const router = createBrowserRouter([
         element: (
           <PrivatRoutes>
             {" "}
-            <AddAPProduct></AddAPProduct>{" "}
+            <AddAPProduct />
           </PrivatRoutes>
         ),
       },
@@ -136,12 +146,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <NotFound></NotFound>,
+        element: <NotFound />,
       },
     ],
   },
   {
     path: "*",
-    element: <NotFound></NotFound>,
+    element: <NotFound />,
   },
 ]);

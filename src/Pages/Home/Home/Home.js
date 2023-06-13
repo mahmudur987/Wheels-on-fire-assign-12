@@ -41,15 +41,15 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <div className=" py-10">
-        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center ">
+        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center ">
           {" "}
-          Hot Deals
+          Hot Deals !
         </h1>
 
         <HoatDeal></HoatDeal>
       </div>
       <div className=" py-10 p-3 text-center rounded-md">
-        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
+        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           {" "}
           Catagories
         </h1>
@@ -73,7 +73,7 @@ const Home = () => {
       </div>
 
       <div className="p-1 text-center">
-        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
+        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           All Cycles
         </h1>
         <Cycles cycles={cycles}></Cycles>
@@ -83,7 +83,7 @@ const Home = () => {
       </div>
 
       <div className="mt-10 border">
-        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
+        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           {" "}
           CYCLE PARTS{" "}
         </h1>
@@ -91,7 +91,7 @@ const Home = () => {
         <CycleParts></CycleParts>
       </div>
       <div className="mt-10 border">
-        <h1 className="text-3xl underline uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
+        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
           {" "}
           OUR SERVICES{" "}
         </h1>

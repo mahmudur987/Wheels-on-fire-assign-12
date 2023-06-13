@@ -8,7 +8,6 @@ const CycleParts = () => {
       .then((res) => res.json())
       .then((data) => Setparts(data));
   }, []);
-  console.log(parts);
 
   return (
     <div className="  grid md:grid-cols-2 lg:grid-cols-3 gap-3 mt-20">
