@@ -88,7 +88,7 @@ const Map = () => {
             className="bg-cover bg-bottom py-8 min-h-[700px]"
             style={{
               backgroundImage:
-                "url('https://thumbs.dreamstime.com/b/kids-city-map-transport-road-vector-illustration-cartoon-cute-car-landscape-elements-cars-building-hand-drawn-children-180338926.jpg')",
+                "url('https://img.freepik.com/free-vector/city-map-design_1308-580.jpg?w=740&t=st=1687085976~exp=1687086576~hmac=4046597ef512360f9f2d937d9e94db760e733a73893448cd5b212309ca029bdd')",
             }}
           >
             <div className="max-w-5xl mx-auto px-4">

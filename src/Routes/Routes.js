@@ -20,6 +20,7 @@ import AdminRoutes from "./AdminRoutes";
 import PrivatRoutes from "./PrivetRoutes";
 import AllCycles from "../Pages/Home/allCycle/AllCycles";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import ConfirmedPaymentPage from "../Pages/Dashboard/Payment/ConfirmPayment";
 
 export const router = createBrowserRouter([
   {
@@ -140,9 +141,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/cheakout/:id",
-        element: <Payment></Payment>,
-        loader: (params) =>
-          fetch(`${process.env.REACT_APP_databaseurl}/payment/${params.id}`),
+        element: <ConfirmedPaymentPage />,
       },
       {
         path: "*",

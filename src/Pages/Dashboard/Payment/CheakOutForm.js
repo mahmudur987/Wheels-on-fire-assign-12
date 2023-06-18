@@ -1,10 +1,6 @@
-
-
 // import React, { useEffect, useState } from 'react';
 // import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 // import toast from 'react-hot-toast';
-
-
 
 // const CheckoutForm = ({ booking }) => {
 //     const [cardError, setCardError] = useState('');
@@ -32,8 +28,6 @@
 //             .then((data) => SetClientSecret(data.clientSecret));
 //     }, [price]);
 
-
-
 //     const handleSubmit = async (event) => {
 //         // Block native form submission.
 //         event.preventDefault();
@@ -42,7 +36,6 @@
 
 //             return;
 //         }
-
 
 //         const card = elements.getElement(CardElement);
 
@@ -86,7 +79,6 @@
 
 //         }
 //         console.log('paymentIntent', paymentIntent)
-
 
 //         if (paymentIntent.status === "succeeded") {
 //             // console.log('cardInfo', card);
@@ -141,7 +133,6 @@
 //                 </button>
 //             </form>
 
-
 //             <p className="text-red-500">{cardError}</p>
 //             {
 //                 success && <div>
@@ -152,13 +143,11 @@
 
 //         </>
 
-
 //     );
 // };
 
 // // Make sure to call `loadStripe` outside of a component’s render to avoid
 // // recreating the `Stripe` object on every render.
-
 
 // // const App = () => {
 // //     return (

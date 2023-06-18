@@ -90,7 +90,9 @@ const Details = () => {
                 return toast.error("Please Login First For Booking ");
               }
               if (sold) {
-                toast.error("This product is already booked");
+                return toast.error(
+                  "This product is already booked try another"
+                );
               }
 
               SetopenModal(true);

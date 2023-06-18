@@ -77,11 +77,14 @@ const MyBookings = () => {
                 <p>{booking.email}</p>
                 <p>Meeting Point: {booking.meetingLocation}</p>
               </td>
-              <td>
+              <td className="flex flex-col items-center">
+                <button className="btn btn-outline m-1 btn-sm">
+                  Purchase done
+                </button>
                 <Link to={`/dashboard/cheakout/${booking._id}`}>
                   {" "}
                   <button className="btn btn-primary btn-sm">
-                    Confirm
+                    pay online
                   </button>{" "}
                 </Link>
                 <button

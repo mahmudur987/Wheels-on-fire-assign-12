@@ -50,7 +50,7 @@ const DashBoardlayout = () => {
                   <Link to={"/dashboard/addproduct"}>Add product</Link>
                 </li>
                 <li className="text-xl font-bold text-secondary ">
-                  <Link to={"/dashboard/myproduct"}>My product</Link>
+                  <Link to={"/dashboard/myproduct"}>My selling product</Link>
                 </li>
               </>
             )}
