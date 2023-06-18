@@ -23,8 +23,11 @@ const Services = () => {
               alt="Shoes"
             />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title"> {service.ServiceName} </h2>
+          <div className="card-body text-start">
+            <h2 className="card-title uppercase font-bold">
+              {" "}
+              {service.ServiceName}{" "}
+            </h2>
             <p className="text-xl text-primary font-bold">
               {" "}
               Price :{service.price}{" "}

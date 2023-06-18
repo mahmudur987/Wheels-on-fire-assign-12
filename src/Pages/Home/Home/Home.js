@@ -7,6 +7,11 @@ import HoatDeal from "../HotDeal/HoatDeal";
 import Services from "../Services/Services";
 import { authContext } from "../../../Context/UserContext";
 import Loading from "../../../Components/Loading/Loading";
+import Showcase from "../../../Components/Showcase/Showcase";
+import Brands from "../../../Components/Brands/Brands";
+import Map from "../../../Components/Map/Map";
+import BestMathod from "../../../Components/BestMethod/BestMathod";
+import PublicReviews from "../../../Components/PublicReview/PublicReview";
 
 const Home = () => {
   const { loading, Setloading } = useContext(authContext);
@@ -37,21 +42,28 @@ const Home = () => {
   }
   return (
     <div>
-      <div className=" pb-10">
+      {/* banner section */}
+
+      <div className=" my-10">
         <Banner></Banner>
       </div>
-      <div className=" py-10">
-        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center ">
+
+      {/* Hot deals */}
+
+      <div className=" py-10 my-10 border">
+        <h1 className="text-3xl   uppercase font-bold  text-secondary p-2  m-4  text-center ">
           {" "}
-          Hot Deals !
+          <span className="  px-10 rounded-xl">Hot Deals !</span>
         </h1>
 
         <HoatDeal></HoatDeal>
       </div>
-      <div className=" py-10 p-3 text-center rounded-md">
-        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
+
+      {/* catagories */}
+      <div className=" py-10 p-3 text-center rounded-md my-10 border">
+        <h1 className="text-2xl md:text-3xl   uppercase font-bold  text-secondary p-2 m-4  text-center">
           {" "}
-          Catagories
+          <span className="  px-10 rounded-xl"> Find by Catagories</span>
         </h1>
         <div className="grid  md:grid-cols-2 lg:grid-cols-3   ">
           {catagories.map((catagory) => (
@@ -72,9 +84,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-1 text-center">
-        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
-          All Cycles
+      {/* recently added */}
+
+      <div className="p-1 min-h-[850px] text-center my-20 border flex flex-col justify-end  relative">
+        <h1 className="text-xl sm:text-3xl uppercase font-bold p-2 m-4  text-center md:absolute -top-12 left-1/3 z-10">
+          <span className="bg-gradient-to-r from-cyan-800 to-blue-800  text-pink-400 px-10 rounded-xl">
+            {" "}
+            Recently Added
+          </span>
         </h1>
         <Cycles cycles={cycles}></Cycles>
         <Link to={"/allcycle"}>
@@ -82,21 +99,53 @@ const Home = () => {
         </Link>
       </div>
 
-      <div className="mt-10 border">
-        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
+      {/* showcase */}
+
+      <div className="my-10 border">
+        <Showcase />
+      </div>
+
+      {/* brands slider */}
+
+      <div className="my-10 border">
+        <Brands />
+      </div>
+
+      {/* buying or selling map */}
+
+      <div className="my-10 border">
+        <Map />
+      </div>
+
+      {/* accessories */}
+      <div className="my-10 border">
+        <h1 className="text-3xl   uppercase font-bold text-secondary p-2 m-4  text-center">
           {" "}
-          CYCLE PARTS{" "}
+          <span className="  px-10 rounded-xl">CYCLE ACCESSORIES </span>
         </h1>
 
         <CycleParts></CycleParts>
       </div>
-      <div className="mt-10 border">
-        <h1 className="text-3xl   uppercase font-bold bg-primary text-secondary p-2 rounded-xl m-4  text-center">
-          {" "}
-          OUR SERVICES{" "}
+
+      {/* Best Tips */}
+      <div className="my-10 border">
+        <BestMathod />
+      </div>
+
+      {/* our services */}
+
+      <div className="my-10 border">
+        <h1 className="text-3xl   uppercase font-bold  text-secondary p-2  m-4  text-center">
+          <span className="  px-10 rounded-xl"> OUR SERVICES </span>
         </h1>
 
         <Services></Services>
+      </div>
+
+      {/* public review */}
+
+      <div className="my-10 border">
+        <PublicReviews />
       </div>
     </div>
   );

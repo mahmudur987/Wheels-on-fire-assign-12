@@ -1,0 +1,17 @@
+export const Methods = [
+  "Determine your needs: Think about the type of bike you need. Are you looking for a road bike, mountain bike, commuter bike, or something else? Consider the intended use, your riding style, and the terrain you'll be cycling on.",
+  "Set a budget: Determine how much you are willing to spend on a used bike. This will help narrow down your options and prevent you from overspending.",
+  "Research: Do some research to get an idea of the market value for the type of bike you're interested in. Look up prices on online marketplaces or visit local bike shops to compare prices.",
+  "Inspect the bike in person: When viewing a second-hand bike, inspect it thoroughly. Check for any visible damage, rust, dents, or signs of wear and tear. Pay attention to the frame, wheels, brakes, gears, and suspension (if applicable). Test the bike by taking it for a short ride to assess its performance.",
+  "Frame condition: Examine the frame closely. Look for any cracks, dents, or signs of damage, especially near welds and joints. Minor scratches or paint chips are usually not a major concern but can be used for price negotiation.",
+  "Mileage and maintenance: Ask the seller about the bike's mileage and maintenance history. Find out how often it was serviced, if it has had any major repairs, and if the components have been upgraded or replaced.",
+  "Check the drivetrain: Inspect the chain, cassette, and chainrings for wear. Worn components may require replacement, which can add to the overall cost.",
+  "Test the brakes and gears: Ensure the brakes are responsive and the gears shift smoothly. Listen for any unusual noises or grinding sounds that may indicate issues with the drivetrain.",
+  "Wheel condition: Spin the wheels and check for wobbling or significant lateral movement. This could indicate problems with the wheel truing or the hub bearings.",
+  "Consider the fit: Make sure the bike is the right size for you. Stand over the top tube with your feet flat on the ground. There should be a few centimeters of clearance between your body and the top tube.",
+  "Ask questions: Don't hesitate to ask the seller questions about the bike's history, usage, and any concerns you may have. A transparent seller will provide you with honest answers.",
+  "Negotiate the price: Use your inspection findings as leverage for negotiation. If you identify any issues or necessary repairs, you can ask for a lower price or ask the seller to address the problems before finalizing the purchase.",
+  "Consider the seller: Evaluate the credibility of the seller. Buying from reputable sources like bike shops or known individuals can provide more assurance about the bike's condition and legitimacy.",
+  "Check legal documents: Ensure that the bike comes with proper documentation, such as a proof of ownership or a bill of sale, to avoid any legal complications.",
+  "Consider a test ride: If possible, take the bike for a longer test ride to get a better feel for its comfort, handling, and performance.",
+];
